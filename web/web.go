@@ -8,7 +8,7 @@ import (
 	"github.com/etsy/hound/api"
 	"github.com/etsy/hound/config"
 	"github.com/etsy/hound/searcher"
-	"github.com/etsy/hound/ui"
+	"github.com/spsneo/hound/ui"
 )
 
 // Server is an HTTP server that handles all
