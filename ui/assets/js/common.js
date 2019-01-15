@@ -31,6 +31,12 @@ export function UrlToRepo(repo, path, line, rev) {
         url = '//' + sshParts[2] + '/' + sshParts[4];
     }
 
+    // Support for phabricator style URLs
+    if (repo.url.indexOf('phabricator') !== 1 && sshParts) {
+      var urlParts = sshParts[4].split("/");
+      url = '//' + sshParts[2] + '/' + urlParts[0] + '/' + urlParts[1];
+    }
+
     // I'm sure there is a nicer React/jsx way to do this:
     return ExpandVars(pattern['base-url'], {
         url : url,
